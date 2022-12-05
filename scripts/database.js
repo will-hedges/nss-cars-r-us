@@ -1,5 +1,5 @@
 const database = {
-  colors: [
+  paints: [
     {
       id: 1,
       color: "Silver",
@@ -21,69 +21,69 @@ const database = {
       price: 400,
     },
   ],
-  seats: [
+  interiors: [
     {
       id: 1,
-      seat: "Beige Fabric",
+      material: "Beige Fabric",
       price: 100,
     },
     {
       id: 2,
-      seat: "Charcoal Fabric",
+      material: "Charcoal Fabric",
       price: 200,
     },
     {
       id: 3,
-      seat: "White Leather",
+      material: "White Leather",
       price: 300,
     },
     {
       id: 4,
-      seat: "Black Leather",
+      material: "Black Leather",
       price: 400,
     },
   ],
-  packages: [
+  technologies: [
     {
       id: 1,
-      package: "Basic Package",
+      name: "Basic Package",
       price: 100,
     },
     {
       id: 2,
-      package: "Navigation Package",
+      name: "Navigation Package",
       price: 200,
     },
     {
       id: 3,
-      package: "Visibility Package",
+      name: "Visibility Package",
       price: 300,
     },
     {
       id: 4,
-      package: "Ultra Package",
+      name: "Ultra Package",
       price: 400,
     },
   ],
   wheels: [
     {
       id: 1,
-      wheel: "17-inch Pair Radial",
+      rim: "17-inch Pair Radial",
       price: 100,
     },
     {
       id: 2,
-      wheel: "17-inch Pair Radial Black",
+      rim: "17-inch Pair Radial Black",
       price: 200,
     },
     {
       id: 3,
-      wheel: "18-inch Pair Spoke Silver",
+      rim: "18-inch Pair Spoke Silver",
       price: 300,
     },
     {
       id: 4,
-      wheel: "18-inch Pair Spoke Black",
+      rim: "18-inch Pair Spoke Black",
       price: 400,
     },
   ],
@@ -91,18 +91,18 @@ const database = {
   orderBuilder: {},
 };
 
-export const getColors = () => {
-  return database.colors.map((color) => ({ ...color }));
+export const getPaints = () => {
+  return database.paints.map((color) => ({ ...color }));
 };
 
-export const getSeats = () => {
-  return database.seats.map((seat) => ({ ...seat }));
+export const getInteriors = () => {
+  return database.interiors.map((material) => ({ ...material }));
 };
 
-export const getPackages = () => {
-  return database.packages.map((techPackage) => ({ ...techPackage }));
+export const getTechnologies = () => {
+  return database.technologies.map((name) => ({ ...name }));
 };
 
 export const getWheels = () => {
-  return database.wheels.map((wheel) => ({ ...wheel }));
+  return database.wheels.map((rim) => ({ ...rim }));
 };
