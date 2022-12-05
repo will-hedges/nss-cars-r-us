@@ -3,7 +3,7 @@ import { getInteriors, setInterior } from "./database.js";
 const interiors = getInteriors();
 
 export const Interiors = () => {
-  return `<div class="choice">
+  return `<section class="choices__interiors options">
   <h2>Interiors</h2>
     <select id="interior">
       <option value="0">Select an interior upholstery</option>
@@ -13,7 +13,7 @@ export const Interiors = () => {
           })
           .join("")}
     </select>
-  </div>`;
+  </section>`;
 };
 
 document.addEventListener("change", (event) => {

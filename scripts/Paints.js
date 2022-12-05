@@ -3,7 +3,7 @@ import { getPaints, setPaint } from "./database.js";
 const paints = getPaints();
 
 export const Paints = () => {
-  return `<div class="choice">
+  return `<section class="choices__paints options">
   <h2>Paints</h2>
     <select id="paint">
       <option value="0">Select a paint color</option>
@@ -13,7 +13,7 @@ export const Paints = () => {
           })
           .join("")}
     </select>
-  </div>
+  </section>
   `;
 };
 

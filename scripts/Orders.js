@@ -14,23 +14,24 @@ const [interiors, paints, technologies, wheels] = [
 ];
 
 const buildOrderListItem = (order) => {
-  const interiorPrice = interiors.find((interior) => {
+  const foundInterior = interiors.find((interior) => {
     return interior.id === order.interiorId;
-  }).price;
+  });
 
-  const paintPrice = paints.find((paint) => {
+  const foundPaint = paints.find((paint) => {
     return paint.id === order.paintId;
-  }).price;
+  });
 
-  const technologyPrice = technologies.find((tech) => {
+  const foundTech = technologies.find((tech) => {
     return tech.id === order.techId;
-  }).price;
+  });
 
-  const wheelPrice = wheels.find((wheel) => {
+  const foundWheel = wheels.find((wheel) => {
     return wheel.id === order.wheelId;
-  }).price;
+  });
 
-  let orderPrice = interiorPrice + paintPrice + technologyPrice + wheelPrice;
+  let orderPrice =
+    foundInterior.price + foundPaint.price + foundTech.price + foundWheel.price;
 
   orderPrice = orderPrice.toLocaleString("en-US", {
     style: "currency",
@@ -38,15 +39,15 @@ const buildOrderListItem = (order) => {
   });
 
   return `
-  <li>
-    Order #${order.id} was placed at ${order.timestamp} for ${orderPrice}
+  <li class="order__item">
+    ${foundPaint.color} car with ${foundWheel.style} wheels, ${foundInterior.material} interior and the ${foundTech.name} for a total cost of ${orderPrice}.
   </li>`;
 };
 
 export const Orders = () => {
   const orders = getOrders();
   return `<h2>Custom Car Orders</h2>
-  <ul>
-    ${orders.map(buildOrderListItem)}
-  </ul>`;
+    <ul class="orders__list">
+      ${orders.map(buildOrderListItem)}
+    </ul>`;
 };
