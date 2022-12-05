@@ -95,14 +95,30 @@ export const getPaints = () => {
   return database.paints.map((color) => ({ ...color }));
 };
 
+export const setPaint = (id) => {
+  database.orderBuilder.paintId = id;
+};
+
 export const getInteriors = () => {
   return database.interiors.map((material) => ({ ...material }));
+};
+
+export const setInterior = (id) => {
+  database.orderBuilder.interiorId = id;
 };
 
 export const getTechnologies = () => {
   return database.technologies.map((name) => ({ ...name }));
 };
 
+export const setTechnology = (id) => {
+  database.orderBuilder.technologyId = id;
+};
+
 export const getWheels = () => {
   return database.wheels.map((style) => ({ ...style }));
+};
+
+export const setWheel = (id) => {
+  database.orderBuilder.wheelId = id;
 };

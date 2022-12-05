@@ -9,5 +9,9 @@ export const CarsRUs = () => {
   ${Interiors()}
   ${Technologies()}
   ${Wheels()}
+  <hr>
+  <article>
+    <button id="orderButton">Create Custom Order</button>
+  </article>
   `;
 };
