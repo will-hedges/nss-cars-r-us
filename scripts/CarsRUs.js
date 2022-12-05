@@ -13,10 +13,15 @@ document.addEventListener("click", (event) => {
 
 export const CarsRUs = () => {
   return `
-  ${Paints()}
-  ${Interiors()}
-  ${Technologies()}
-  ${Wheels()}
+  <h1>Cars-R-Us: Personal Car Builder</h1>
+  <div class="choice__row">
+    ${Paints()}
+    ${Interiors()}
+  </div>
+  <div class="choice__row">
+    ${Technologies()}
+    ${Wheels()}
+  </div>
   <hr>
   <button id="orderButton">Create Custom Order</button>
   <hr>

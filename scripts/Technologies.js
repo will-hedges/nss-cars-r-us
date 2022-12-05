@@ -3,7 +3,8 @@ import { getTechnologies, setTechnology } from "./database.js";
 const technologies = getTechnologies();
 
 export const Technologies = () => {
-  return `<h2>Technologies</h2>
+  return `<div class="choice">
+  <h2>Technologies</h2>
     <select id="tech">
       <option value="0">Select a technology package</option>
         ${technologies
@@ -11,7 +12,8 @@ export const Technologies = () => {
             return `<option value="${tech.id}">${tech.name}</option>`;
           })
           .join("")}
-    </select>`;
+    </select>
+  </div>`;
 };
 
 document.addEventListener("change", (event) => {
