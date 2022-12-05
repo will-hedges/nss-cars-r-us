@@ -1,4 +1,4 @@
-import { getInteriors } from "./database.js";
+import { getInteriors, setInterior } from "./database.js";
 
 const interiors = getInteriors();
 
@@ -15,13 +15,7 @@ export const Interiors = () => {
 };
 
 document.addEventListener("change", (event) => {
-  const dropdown = event.target;
-
-  if (dropdown.id === "interior") {
-    const interiorId = parseInt(event.target.value);
-    const interiorMaterial = interiors.find(
-      (material) => material.id === interiorId
-    ).material;
-    window.alert(`The customer chose ${interiorMaterial} interior`);
+  if (event.target.id === "interior") {
+    setInterior(parseInt(event.target.value));
   }
 });

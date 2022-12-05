@@ -1,4 +1,4 @@
-import { getWheels } from "./database.js";
+import { getWheels, setWheel } from "./database.js";
 
 const wheels = getWheels();
 
@@ -15,11 +15,7 @@ export const Wheels = () => {
 };
 
 document.addEventListener("change", (event) => {
-  const dropdown = event.target;
-
-  if (dropdown.id === "wheel") {
-    const wheelId = parseInt(event.target.value);
-    const wheelStyle = wheels.find((wheel) => wheel.id === wheelId).style;
-    window.alert(`The customer chose ${wheelStyle} wheels`);
+  if (event.target.id === "wheel") {
+    setWheel(parseInt(event.target.value));
   }
 });
