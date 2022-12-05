@@ -68,22 +68,22 @@ const database = {
   wheels: [
     {
       id: 1,
-      rim: "17-inch Pair Radial",
+      style: "17-inch Pair Radial",
       price: 100,
     },
     {
       id: 2,
-      rim: "17-inch Pair Radial Black",
+      style: "17-inch Pair Radial Black",
       price: 200,
     },
     {
       id: 3,
-      rim: "18-inch Pair Spoke Silver",
+      style: "18-inch Pair Spoke Silver",
       price: 300,
     },
     {
       id: 4,
-      rim: "18-inch Pair Spoke Black",
+      style: "18-inch Pair Spoke Black",
       price: 400,
     },
   ],
@@ -104,5 +104,5 @@ export const getTechnologies = () => {
 };
 
 export const getWheels = () => {
-  return database.wheels.map((rim) => ({ ...rim }));
+  return database.wheels.map((style) => ({ ...style }));
 };
