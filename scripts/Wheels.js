@@ -13,3 +13,13 @@ export const Wheels = () => {
           .join("")}
     </select>`;
 };
+
+document.addEventListener("change", (event) => {
+  const dropdown = event.target;
+
+  if (dropdown.id === "wheel") {
+    const wheelId = parseInt(event.target.value);
+    const wheelStyle = wheels.find((wheel) => wheel.id === wheelId).style;
+    window.alert(`The customer chose ${wheelStyle} wheels`);
+  }
+});
