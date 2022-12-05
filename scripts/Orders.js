@@ -32,9 +32,14 @@ const buildOrderListItem = (order) => {
 
   let orderPrice = interiorPrice + paintPrice + technologyPrice + wheelPrice;
 
+  orderPrice = orderPrice.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return `
   <li>
-    Order #${order.id} was placed at ${order.timestamp}
+    Order #${order.id} was placed at ${order.timestamp} for ${orderPrice}
   </li>`;
 };
 
