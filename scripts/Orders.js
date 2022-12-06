@@ -48,6 +48,6 @@ export const Orders = () => {
   const orders = getOrders();
   return `<h2>Custom Car Orders</h2>
     <ul class="orders__list">
-      ${orders.map(buildOrderListItem)}
+      ${orders.map(buildOrderListItem).join("")}
     </ul>`;
 };

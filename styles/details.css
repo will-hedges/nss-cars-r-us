@@ -19,3 +19,11 @@
 .option-container {
     flex: 1 1 0;
 }
+
+.order__item {
+    display: flex;
+    background-color: aliceblue;
+    margin: 1rem 1rem;
+    padding: 1rem 1rem;
+    border: 1px dashed dodgerblue;
+}
