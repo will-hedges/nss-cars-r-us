@@ -87,8 +87,17 @@ const database = {
       price: 400,
     },
   ],
+  bodies: [
+    { id: 1, type: "Car", priceMultiplier: 1 },
+    { id: 2, type: "SUV", priceMultiplier: 1.5 },
+    { id: 3, type: "Truck", priceMultiplier: 2.25 },
+  ],
   customOrders: [],
   orderBuilder: {},
+};
+
+export const getBodies = () => {
+  return database.bodies.map((body) => ({ ...body }));
 };
 
 export const getInteriors = () => {
@@ -109,6 +118,10 @@ export const getTechnologies = () => {
 
 export const getWheels = () => {
   return database.wheels.map((style) => ({ ...style }));
+};
+
+export const setBody = (id) => {
+  database.orderBuilder.bodyId = id;
 };
 
 export const setInterior = (id) => {

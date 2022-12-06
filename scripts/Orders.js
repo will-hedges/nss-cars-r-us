@@ -1,4 +1,5 @@
 import {
+  getBodies,
   getInteriors,
   getOrders,
   getPaints,
@@ -6,7 +7,8 @@ import {
   getWheels,
 } from "./database.js";
 
-const [interiors, paints, technologies, wheels] = [
+const [bodies, interiors, paints, technologies, wheels] = [
+  getBodies(),
   getInteriors(),
   getPaints(),
   getTechnologies(),
@@ -14,6 +16,10 @@ const [interiors, paints, technologies, wheels] = [
 ];
 
 const buildOrderListItem = (order) => {
+  const foundBody = bodies.find((body) => {
+    return body.id === order.bodyId;
+  });
+
   const foundInterior = interiors.find((interior) => {
     return interior.id === order.interiorId;
   });
@@ -33,6 +39,8 @@ const buildOrderListItem = (order) => {
   let orderPrice =
     foundInterior.price + foundPaint.price + foundTech.price + foundWheel.price;
 
+  orderPrice *= foundBody.priceMultiplier;
+
   orderPrice = orderPrice.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
@@ -40,7 +48,7 @@ const buildOrderListItem = (order) => {
 
   return `
   <li class="order__item">
-    ${foundPaint.color} car with ${foundWheel.style} wheels, ${foundInterior.material} interior and the ${foundTech.name} for a total cost of ${orderPrice}.
+    ${foundPaint.color} ${foundBody.type} with ${foundWheel.style} wheels, ${foundInterior.material} interior and the ${foundTech.name} for a total cost of ${orderPrice}.
   </li>`;
 };
 
